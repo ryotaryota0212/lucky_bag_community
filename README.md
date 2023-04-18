@@ -1,2 +1,2 @@
-# rehearsal_pay
+# lucky_bag_community
 ライブのリハーサルを販売できます
