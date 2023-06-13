@@ -45,23 +45,23 @@ class _MerchandisePageState extends State<MerchandisePage> {
 
         // 2. initialize the payment sheet
       await Stripe.instance.initPaymentSheet(
-          paymentSheetParameters: SetupPaymentSheetParameters(
-            // Enable custom flow
-            customFlow: true,
-            // Main params
-            merchantDisplayName: 'Stripeテスト',
-            paymentIntentClientSecret: data['response']['client_secret'],
-            // Customer keys
-            customerEphemeralKeySecret: data['ephemeralKey'],
-            customerId: data['customer']['id'],
-            // Extra options
-            // testEnv: true,
-            // applePay: true,
-            // googlePay: true,
-            style: ThemeMode.dark,
-            // merchantCountryCode: 'DE',
-          ),
-        );
+        paymentSheetParameters: SetupPaymentSheetParameters(
+          // Enable custom flow
+          customFlow: true,
+          // Main params
+          merchantDisplayName: 'Stripeテスト',
+          paymentIntentClientSecret: data['response']['client_secret'],
+          // Customer keys
+          customerEphemeralKeySecret: data['ephemeralKey'],
+          customerId: data['customer']['id'],
+          // Extra options
+          // testEnv: true,
+          // applePay: true,
+          // googlePay: true,
+          style: ThemeMode.dark,
+          // merchantCountryCode: 'DE',
+        ),
+      );
       await Stripe.instance.presentPaymentSheet();
     } catch(e) {
       print("Exception: $e");
